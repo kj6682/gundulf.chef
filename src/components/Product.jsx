@@ -18,10 +18,11 @@ class Product extends Component {
         let myStyle = "product-" + index%2
         return (
             <li className={myStyle}>
-                <h4><b>{this.props.product.name}</b> ({this.props.product.pieces})</h4>
+                <h2><b>{this.props.product.name}</b> ({this.props.product.pieces})</h2>
                 <h4>{this.props.index}</h4>
                 <p>{this.props.product.producer}</p>
-                <p>valide du : {this.props.product.startDate}</p><p> au : {this.props.product.endDate} </p>
+                <p>valide du : {this.props.product.startDate}</p>
+                <p> au : {this.props.product.endDate} </p>
             </li>
         )
     }
@@ -32,7 +33,7 @@ Product.propTypes = {
     callbacks: PropTypes.object.isRequired,
 }
 
-export default Product     
+export default Product
 
                            
                            
