@@ -1,8 +1,11 @@
 .products {
     margin-top: 50px;
+    width: 100%;
+
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .product-0 {
@@ -10,15 +13,22 @@
     background: aliceblue;
     padding: 20px;
     flex: 1 0 20%;
+    
 
 }
 
 .product-1 {
     border: 1px solid #222222;
-    background: lightblue;
+    background: aliceblue;
     padding: 20px;
     flex: 1 0 20%;
 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 @media screen and (max-width: 900px) {

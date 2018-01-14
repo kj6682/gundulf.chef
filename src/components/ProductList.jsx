@@ -32,9 +32,9 @@ class ProductList extends React.Component {
 
         return (
 
-            <div className="products">
+            <ul className="products">
                 {products}
-            </div>
+            </ul>
 
         )
     }
