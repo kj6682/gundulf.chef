@@ -1,0 +1,29 @@
+.products {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product-0 {
+    border: 1px solid #222222;
+    background: aliceblue;
+    padding: 20px;
+    flex: 1 0 20%;
+
+}
+
+.product-1 {
+    border: 1px solid #222222;
+    background: lightblue;
+    padding: 20px;
+    flex: 1 0 20%;
+
+}
+
+@media screen and (max-width: 900px) {
+    .products {
+        flex-direction: column;
+    }
+
+}
