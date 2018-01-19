@@ -34,27 +34,34 @@
 }
 .product-0 {
     border: 1px solid #222;
-    background: aliceblue;
+    background: ghostwhite;
     flex: 1 0 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .product-0:hover{
-    background-color: darksalmon;
+    background-color: lightblue;
+    color: lightcyan;
 }
-
 
 .product-1 {
     border: 1px solid #222;
-    background: lightblue;
+    background: white;
     flex: 1 0 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .product-1:hover{
-    background-color: darksalmon;
+    background-color: lightblue;
+    color: lightcyan;
+
+}
+.red{
+    color: firebrick;
+    text-decoration: line-through;
+    font-style: normal;
 }
 ul {
     list-style-type: none;

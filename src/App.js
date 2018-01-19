@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
+import Top from './components/Top'
 import SearchBar from './components/SearchBar'
 import ProductList from './components/ProductList'
+import AddProductForm from './components/AddProductForm'
 
 import {get} from './api/client.jsx'
 import {post} from './api/client.jsx'
@@ -68,13 +69,16 @@ class App extends Component {
 
 
     render() {
+        let addProductForm = <AddProductForm
+            producer = {process.env.REACT_APP_PRODUCER}
+            callbacks={{add: this.addProduct, cancel: this.cancel}}/>
+
         let searchBar = <SearchBar filterText={this.state.search4me}
                                    callbacks={{
                                        onUserInput: this.filter,
                                    }}/>
 
         let productList = <ProductList products={this.state.products}
-                                       product={this.state.newProduct}
                                        filterText={this.state.search4me}
                                        callbacks={{
                                            add: this.addProduct,
@@ -83,6 +87,9 @@ class App extends Component {
 
         return (
             <div className="App">
+
+                <Top/>
+
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     <h1 className="App-title">{process.env.REACT_APP_PRODUCER}</h1>
@@ -90,8 +97,10 @@ class App extends Component {
                 <p className="App-intro">
                     To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
+                {addProductForm}
 
                 {searchBar}
+
                 <p> {uri_products}</p>
                 {productList}
             </div>

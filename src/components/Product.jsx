@@ -15,15 +15,19 @@ class Product extends Component {
 
     render() {
         let index = this.props.index;
-        let myStyle = "product-" + index % 2
+        let myStyle = "product-" + index % 2;
+
         return (
             <li className={myStyle}>
                 <div className="main">
                     <p className="smallText">{this.props.product.producer}</p>
                     <h2>{this.props.product.name} ({this.props.product.pieces})</h2>
-                    <p className="smallText">valid du: {this.props.product.startDate} au: {this.props.product.endDate}</p>
-                    <p className="smallText">lun. mar. mer. jeu. ven. sam. dim. </p>
-
+                    {(this.props.product.endDate === "9999-12-31") ?
+                        <p className="smallText">valid du: {this.props.product.startDate} </p> :
+                        <p className="smallText">valid du: {this.props.product.startDate}
+                            au: {this.props.product.endDate}</p>
+                    }
+                    <p className="smallText"><i className="red">lun.</i> mar. mer. jeu. ven. <i className="red">sam.</i> <i className="red">dim.</i> </p>
                 </div>
 
                 <div className="info">
