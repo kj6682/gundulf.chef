@@ -27,7 +27,7 @@ class About extends Component {
                     <h5 className="w3-center w3-padding-64">
                         <span className="w3-tag w3-wide">GESTION DES PRODUITS</span>
                     </h5>
-                    <p style={myStyleJustification}>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit
+                    <p style={myStyleJustification}>The {this.props.producer.toUpperCase()} was founded in blabla by Mr. Smith in lorem ipsum dolor sit
                         amet, consectetur adipiscing
                         elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequ.

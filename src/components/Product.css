@@ -1,7 +1,7 @@
 .info{
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-content: space-around;
     flex-basis: 10%;
     flex-direction: row;
 }

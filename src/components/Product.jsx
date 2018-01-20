@@ -30,8 +30,14 @@ class Product extends Component {
                 </div>
 
                 <div className="info">
-                    <i className="fa fa-edit fa-2x" ></i>
-                    <i className="fa fa-trash-o fa-2x" onClick={this.remove}></i>
+
+                    <button className="w3-button w3-light-green"
+                            type="submit"
+                            onClick={this.remove}>editer</button>
+
+                    <button className="w3-button w3-black"
+                            type="submit"
+                            onClick={this.remove}>effacer</button>
                 </div>
             </li>
         )
