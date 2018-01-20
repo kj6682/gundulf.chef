@@ -5,9 +5,7 @@ import Top from './components/Top'
 import Header from './components/Header'
 import About from './components/About'
 
-import SearchBar from './components/SearchBar'
-import ProductList from './components/ProductList'
-
+import ProductArea from './components/ProductArea'
 
 import {get} from './api/client.jsx'
 import {post} from './api/client.jsx'
@@ -23,9 +21,8 @@ class App extends Component {
         this.state = {
             products: [],
             product: '',
-            search4me: ''
         }
-        this.filter = this.filter.bind(this)
+
         this.addProduct = this.addProduct.bind(this)
         this.removeProduct = this.removeProduct.bind(this)
 
@@ -39,9 +36,6 @@ class App extends Component {
         });
     }
 
-    filter(searchTerm) {
-        this.setState({search4me: searchTerm})
-    }
 
     addProduct(product) {
         var newProduct = JSON.stringify({
@@ -72,37 +66,27 @@ class App extends Component {
 
     render() {
 
-        let searchBar = <SearchBar filterText={this.state.search4me}
-                                   callbacks={{
-                                       onUserInput: this.filter,
-                                   }}/>
-
-        let productList = <ProductList products={this.state.products}
-                                       filterText={this.state.search4me}
-                                       callbacks={{
-                                           add: this.addProduct,
-                                           remove: this.removeProduct
-                                       }}/>
-
         return (
             <div className="App">
 
                 <Top/>
                 <Header/>
-                <div class="w3-sand w3-grayscale w3-large">
+                <div className="w3-sand w3-grayscale w3-large">
                     <About/>
 
 
                     <AddProductForm product={this.state.newProduct}
-                                    callbacks={this.addProduct}/>
-                    {searchBar}
+                                    callbacks={{add:this.addProduct}}/>
 
-                    <p> {uri_products}</p>
-                    {productList}
+                    <ProductArea products={this.state.products}
+                                 callbacks={{
+                                     add: this.addProduct,
+                                     remove: this.removeProduct,
+                                 }}/>
                     
 
                 </div>
-                <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+                <footer className="w3-center w3-light-grey w3-padding-48 w3-large">
                     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" className="w3-hover-text-green">w3.css</a> e tanta pazienza</p>
                 </footer>
             </div>
