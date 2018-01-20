@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import PropTypes from 'prop-types';
 
 class About extends Component {
 
@@ -25,7 +25,7 @@ class About extends Component {
             <div className="w3-container" id="about">
                 <div className="w3-content" style={myStyle700}>
                     <h5 className="w3-center w3-padding-64">
-                        <span className="w3-tag w3-wide">ABOUT THE CAFE</span>
+                        <span className="w3-tag w3-wide">GESTION DES PRODUITS</span>
                     </h5>
                     <p style={myStyleJustification}>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit
                         amet, consectetur adipiscing
@@ -50,6 +50,9 @@ class About extends Component {
     }
 }
 
+About.propTypes = {
+    producer: PropTypes.String
+}
 
 export default About
 

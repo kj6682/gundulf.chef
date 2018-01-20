@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Header.css'
+import PropTypes from 'prop-types';
 
 
 class Header extends Component {
@@ -21,7 +22,7 @@ class Header extends Component {
 
 
                 <div className="w3-display-middle w3-center">
-                    <div className="w3-text-white" style={myStyle}>nos<br/>Produits</div>
+                    <div className="w3-text-white" style={myStyle}>PRODUITS<br/>{this.props.producer.toUpperCase()}</div>
                 </div>
 
                 <p style={hidden}>.</p>
@@ -55,6 +56,9 @@ class Header extends Component {
     }
 }
 
+Header.propTypes = {
+    producer: PropTypes.String
+}
 
 export default Header
 

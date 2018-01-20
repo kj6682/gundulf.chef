@@ -12,8 +12,8 @@ import {post} from './api/client.jsx'
 import {deleteObject} from './api/client.jsx'
 import AddProductForm from "./components/AddProductForm";
 
-var producer = process.env.REACT_APP_PRODUCER
-var uri_products = process.env.REACT_APP_BACKEND + '/api/products/' + producer
+
+var uri_products = process.env.REACT_APP_BACKEND + '/api/products/'
 
 class App extends Component {
     constructor(props) {
@@ -21,21 +21,28 @@ class App extends Component {
         this.state = {
             products: [],
             product: '',
+            producer: 'four'
         }
 
         this.addProduct = this.addProduct.bind(this)
         this.removeProduct = this.removeProduct.bind(this)
-
+        this.selectProducer = this.selectProducer.bind(this)
     }
 
     componentDidMount() {
-        console.log(uri_products)
+        console.log(uri_products + this.state.producer)
         this.setState({today: new Date().toISOString().slice(0, 10)})
-        get(uri_products).then((data) => {
+        get(uri_products + this.state.producer).then((data) => {
             this.setState({products: data});
         });
     }
 
+    selectProducer(producer){
+        this.setState({producer: producer})
+        get(uri_products + producer).then((data) => {
+            this.setState({products: data});
+        });
+    }
 
     addProduct(product) {
         var newProduct = JSON.stringify({
@@ -44,12 +51,12 @@ class App extends Component {
             "id": 0,
             "name": product.name,
             "pieces": product.pieces,
-            "producer": producer,
+            "producer": this.state.producer,
             "status": "string"
         })
 
-        post(uri_products, newProduct).then(
-            () => get(uri_products, {page: 0}).then(
+        post(uri_products + this.state.producer, newProduct).then(
+            () => get(uri_products + this.state.producer, {page: 0}).then(
                 (data) => {
                     this.setState({products: data, show: false, newProduct: {}});
                 }
@@ -58,7 +65,7 @@ class App extends Component {
     }
 
     removeProduct(name, pieces) {
-        deleteObject(uri_products, name, pieces).then(() => get(uri_products, {page: 0}).then((data) => {
+        deleteObject(uri_products + this.state.producer, name, pieces).then(() => get(uri_products + this.state.producer, {page: 0}).then((data) => {
             this.setState({products: data});
         }));
     }
@@ -69,16 +76,20 @@ class App extends Component {
         return (
             <div className="App">
 
-                <Top/>
-                <Header/>
+                <Top
+                    callbacks={{selectProducer: this.selectProducer}}/>
+                <Header
+                    producer={this.state.producer}/>
                 <div className="w3-sand w3-grayscale w3-large">
-                    <About/>
+
+                    <About producer={this.state.producer}/>
 
 
                     <AddProductForm product={this.state.newProduct}
                                     callbacks={{add:this.addProduct}}/>
 
                     <ProductArea products={this.state.products}
+                                 producer={this.state.producer}
                                  callbacks={{
                                      add: this.addProduct,
                                      remove: this.removeProduct,

@@ -24,8 +24,7 @@ class Product extends Component {
                     <h2>{this.props.product.name} ({this.props.product.pieces})</h2>
                     {(this.props.product.endDate === "9999-12-31") ?
                         <p className="smallText">valid du: {this.props.product.startDate} </p> :
-                        <p className="smallText">valid du: {this.props.product.startDate}
-                            au: {this.props.product.endDate}</p>
+                        <p className="smallText">valid du: {this.props.product.startDate} au: {this.props.product.endDate}</p>
                     }
                     <p className="smallText"><i className="red">lun.</i> mar. mer. jeu. ven. <i className="red">sam.</i> <i className="red">dim.</i> </p>
                 </div>

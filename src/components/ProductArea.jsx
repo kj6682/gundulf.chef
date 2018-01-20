@@ -59,6 +59,7 @@ class ProductArea extends Component {
 
 ProductArea.propTypes = {
     products: PropTypes.arrayOf(PropTypes.object),
+    producer: PropTypes.String,
     callbacks: PropTypes.object.isRequired
 }
 

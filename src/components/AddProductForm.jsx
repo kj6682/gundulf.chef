@@ -16,7 +16,7 @@ class AddProductForm extends React.Component {
         this.state = {
             "startDate": startDate,
             "endDate": endDate,
-            "name": "nom du produit",
+            "name": "",
             "pieces": "1",
             "hide": false
         };
@@ -98,21 +98,22 @@ class AddProductForm extends React.Component {
                     <p>Ajoutez un produit avec ce formulaire</p>
                     <div className="w3-wide">
                         <div>
-                            <label>nom du produit : </label>
+                            <label>nouveau produit</label>
                             <input id="name"
                                    type="text"
+                                   placeholder="nom"
                                    name="produit"
                                    className="w3-input w3-padding-16 w3-border"
                                    value={this.state.name}
                                    onChange={this.handleChange}/>
                         </div>
                         <div>
-                            <label>nombre di pieces : </label>
+                            <label>nombre di pieces</label>
                             <input id="pieces"
                                    type=" number"
                                    className="w3-input w3-padding-16 w3-border"
                                    name="pieces"
-
+                                   placeholder="1"
                                    onChange={this.handleChange}/>
                         </div>
 
