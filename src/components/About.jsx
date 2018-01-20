@@ -51,7 +51,7 @@ class About extends Component {
 }
 
 About.propTypes = {
-    producer: PropTypes.String
+    producer: PropTypes.string.isRequired,
 }
 
 export default About

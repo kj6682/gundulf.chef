@@ -57,7 +57,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-    producer: PropTypes.String
+    producer: PropTypes.string.isRequired,
 }
 
 export default Header

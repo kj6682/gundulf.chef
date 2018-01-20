@@ -59,8 +59,9 @@ class ProductArea extends Component {
 
 ProductArea.propTypes = {
     products: PropTypes.arrayOf(PropTypes.object),
-    producer: PropTypes.String,
+    producer: PropTypes.string.isRequired,
     callbacks: PropTypes.object.isRequired
 }
+
 
 export default ProductArea
