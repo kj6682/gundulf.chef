@@ -4,8 +4,6 @@
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-
-
 }
 
 .group{
@@ -23,11 +21,7 @@
     border:1px solid orange;
 
 }
-label{
-    border:1px solid yellow;
-    flex-basis:50%;
-    text-align: left;
-}
+
 .form{
     border:1px solid greenyellow;
     display:flex;

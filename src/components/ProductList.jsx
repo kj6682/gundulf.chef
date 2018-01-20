@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Product from './Product.jsx';
-import styles from './Product.css';
 
-class ProductList extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+class ProductList extends Component {
 
     render() {
 

@@ -1,0 +1,10 @@
+.bgimg {
+
+    background-image: url(./coffeehouse.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 90%;
+    border:1px solid #222222;
+}
+
+

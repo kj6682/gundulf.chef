@@ -73,62 +73,77 @@ class AddProductForm extends React.Component {
         return 'error';
     }
 
-    hide(){
+    hide() {
         var hide = !this.state.hide
         this.setState({hide: hide})
     }
-    render() {
-        let class4Group = (this.state.hide)?"group":"group hide"
-        return (
-            <div className="outer">
-                <div className="show">
-                    <h4 onClick={this.hide}>click me!</h4>
-                </div>
-                <form className="form">
 
-                    <div className={class4Group}>
-                        <label>Produit:</label>
-                        <input id="name"
-                               type="text"
-                               name="produit"
-                               className="item"
-                               value={this.state.name}
-                               onChange={this.handleChange}/>
-                    </div>
-                    <div className={class4Group}>
-                        <label>Nombre de pieces:</label>
-                        <input id="pieces"
-                               type="number"
-                               className="item"
-                               name="pieces"
-                               value="1" min="1" max="12"
-                               onChange={this.handleChange}/>
-                    </div>
-                    <div className={class4Group}>
-                        <label>valable du :</label>
-                        <input id="startDate"
-                               type="date"
-                               className="item"
-                               name="bday"
-                               min={this.props.startDate}
-                               value={this.state.startDate}
-                               onChange={this.handleChange}></input>
-                    </div>
-                    <div className={class4Group}>
-                        <label>au :</label>
+    render() {
+        let class4Group = (this.state.hide) ? "group" : "group hide"
+        let myStyle = {
+            paddingTop:"40px",
+            paddingBottom: "32px"
+        }
+        let myStyle700 = {
+
+            maxWidth: "700px"
+        }
+        return (
+            <div class="w3-container" id="where" style={myStyle}>
+                <div class="w3-content" style={myStyle700}>
+                    <h5 class="w3-center w3-padding-48">
+                        <span class="w3-tag w3-wide">NOUVEAU PRODUIT</span>
+                    </h5>
+                    <p>Ajoutez un produit avec ce formulaire</p>
+                    <form className="w3-wide">
+                        <div>
+                            <label>nom du produit : </label>
+                            <input id="name"
+                                   type="text"
+                                   name="produit"
+                                   className="w3-input w3-padding-16 w3-border"
+                                   value={this.state.name}
+                                   onChange={this.handleChange}/>
+                        </div>
+                        <div>
+                            <label>nombre di pieces : </label>
+                            <input id=" pieces"
+                                   type=" number"
+                                   className="w3-input w3-padding-16 w3-border"
+                                   name=" pieces"
+
+                                   onChange={this.handleChange}/>
+                        </div>
+
+                        <div>
+                            <label>valid du :</label>
+                            <input id="startDate"
+                                   type="date"
+                                   className="w3-input w3-padding-16 w3-border"
+                                   name="bday"
+                                   min={this.props.startDate}
+                                   value={this.state.startDate}
+                                   onChange={this.handleChange}></input>
+                        </div>
+                        <div>
+                            <label>au :</label>
                         <input id="endDate"
                                type="date"
-                               className="item"
+                               className="w3-input w3-padding-16 w3-border"
                                name="bday"
                                min={this.props.startDate} max={this.state.endDate}
                                value={this.state.endDate}
                                onChange={this.handleChange}></input>
-                    </div>
-                    <div className={class4Group}>
-                        <button className="item" onClick={this.remove}>valider</button>
-                    </div>
-                </form>
+                        </div>
+
+                        <div>
+                            <p> </p>
+                            <button className="w3-button w3-black" type="submit" onClick={this.remove}>valider</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+
         )
     }
 
@@ -140,3 +155,5 @@ AddProductForm.propTypes = {
 }
 
 export default AddProductForm
+
+

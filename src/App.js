@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Top from './components/Top'
+import Header from './components/Header'
+import About from './components/About'
+
 import SearchBar from './components/SearchBar'
 import ProductList from './components/ProductList'
-import AddProductForm from './components/AddProductForm'
+
 
 import {get} from './api/client.jsx'
 import {post} from './api/client.jsx'
 import {deleteObject} from './api/client.jsx'
+import AddProductForm from "./components/AddProductForm";
 
 var producer = process.env.REACT_APP_PRODUCER
 var uri_products = process.env.REACT_APP_BACKEND + '/api/products/' + producer
@@ -67,11 +70,7 @@ class App extends Component {
     }
 
 
-
     render() {
-        let addProductForm = <AddProductForm
-            producer = {process.env.REACT_APP_PRODUCER}
-            callbacks={{add: this.addProduct, cancel: this.cancel}}/>
 
         let searchBar = <SearchBar filterText={this.state.search4me}
                                    callbacks={{
@@ -89,20 +88,23 @@ class App extends Component {
             <div className="App">
 
                 <Top/>
+                <Header/>
+                <div class="w3-sand w3-grayscale w3-large">
+                    <About/>
 
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">{process.env.REACT_APP_PRODUCER}</h1>
-                </header>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
-                {addProductForm}
 
-                {searchBar}
+                    <AddProductForm product={this.state.newProduct}
+                                    callbacks={this.addProduct}/>
+                    {searchBar}
 
-                <p> {uri_products}</p>
-                {productList}
+                    <p> {uri_products}</p>
+                    {productList}
+                    
+
+                </div>
+                <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+                    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" className="w3-hover-text-green">w3.css</a> e tanta pazienza</p>
+                </footer>
             </div>
         );
     }

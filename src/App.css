@@ -28,15 +28,10 @@
 }
 
 body, html {
-  height: 100%;
-  font-family: "Inconsolata", sans-serif;
-}
-.bgimg {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/images/coffeehouse.jpg");
-  min-height: 75%;
-}
+     height: 100%;
+     font-family: "Inconsolata", sans-serif;
+ }
+
 .menu {
-  display: none;
+    display: none;
 }
