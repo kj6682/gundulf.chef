@@ -13,7 +13,7 @@ import {deleteObject} from './api/client.jsx'
 import AddProductForm from "./components/AddProductForm";
 
 
-var uri_products = process.env.REACT_APP_BACKEND + '/api/products/'
+var uri_products = process.env.REACT_APP_BACKEND + 'api/products/'
 
 class App extends Component {
     constructor(props) {
