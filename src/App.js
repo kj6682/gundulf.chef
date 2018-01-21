@@ -30,7 +30,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        console.log(uri_products + this.state.producer)
+        console.log("bloody cors " +uri_products + this.state.producer)
         this.setState({today: new Date().toISOString().slice(0, 10)})
         get(uri_products + this.state.producer).then((data) => {
             this.setState({products: data});
