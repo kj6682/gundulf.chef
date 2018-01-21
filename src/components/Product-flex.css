@@ -7,20 +7,39 @@
 
 
 .info{
+    display: flex;
     justify-content: space-around;
     align-content: space-around;
-
+    flex-basis: 10%;
+    flex-direction: row;
 }
-
+.main {
+    /* border:1px solid #222222;*/
+    flex-basis: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+.main h2 {
+    /*border:1px solid #222222;*/
+    text-align: left;
+    margin: .3rem;
+}
 
 .products {
     margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-between;
     padding: 2rem;
 }
 .product-0 {
     border: 1px solid #222;
     background: ghostwhite;
+    flex: 1 0 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
@@ -28,21 +47,12 @@
     background-color: lightblue;
     color: lightcyan;
 }
-.product-0 h2 {
-    /*border:1px solid #222222;*/
-    text-align: left;
-    margin: .3rem;
-}
-.product-0 button {
-    /*border:1px solid #222222;*/
-    height: 100%;
-    width: 50%;
-    /*margin: .3rem;*/
-}
 
 .product-1 {
     border: 1px solid #222;
     background: white;
+    flex: 1 0 100%;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
@@ -51,18 +61,6 @@
     color: lightcyan;
 
 }
-.product-1 h2 {
-    /*border:1px solid #222222;*/
-    text-align: left;
-    margin: .3rem;
-}
-.product-1 button {
-    /*border:1px solid #222222;*/
-    height: 100%;
-    width: 50%;
-    /*margin: .3rem;*/
-}
-
 .red{
     color: firebrick;
     text-decoration: line-through;
@@ -78,11 +76,15 @@ ul {
     .info{
         justify-content: space-around;
         align-content: center;
-
+        flex-basis: 30%;
     }
-
+    .products {
+        flex-direction: column;
+    }
     .main {
+        flex-basis: 80%;
         padding-left: 0rem;
+        align-self: center;
         padding-top: 0px;
         padding-bottom: 0px;
     }
@@ -94,14 +96,22 @@ ul {
     }
 
     .product-0 {
+        flex-direction: row;
         height: auto;
         justify-content: space-around;
+        flex: 1 1 100%;
+        display: flex;
+        flex-wrap: wrap;
         padding: 1em;
     }
 
     .product-1 {
+        flex-direction: row;
         height: auto;
         justify-content: space-around;
+        flex: 1 1 100%;
+        display: flex;
+        flex-wrap: wrap;
         padding: 1em;
     }
     .product-0 h2 {
@@ -110,17 +120,5 @@ ul {
 
     .product-1 h2 {
         text-align: center;
-    }
-    .product-0 button {
-        /*border:1px solid #222222;*/
-        height: 100%;
-        width: 40%;
-        /*margin: .3rem;*/
-    }
-    .product-1 button {
-        /*border:1px solid #222222;*/
-        height: 100%;
-        width: 40%;
-        /*margin: .3rem;*/
     }
 }
