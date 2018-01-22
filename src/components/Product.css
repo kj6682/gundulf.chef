@@ -6,23 +6,13 @@
 }
 
 
-.info{
-    justify-content: space-around;
-    align-content: space-around;
-
-}
-
-
 .products {
     margin-top: 50px;
-    justify-content: space-between;
     padding: 2rem;
 }
 .product-0 {
     border: 1px solid #222;
     background: ghostwhite;
-    align-items: center;
-    justify-content: space-between;
 }
 .product-0:hover{
     background-color: lightblue;
@@ -43,8 +33,6 @@
 .product-1 {
     border: 1px solid #222;
     background: white;
-    align-items: center;
-    justify-content: space-between;
 }
 .product-1:hover{
     background-color: lightblue;

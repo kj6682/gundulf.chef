@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Product from './Product3W.jsx';
+import Product from './Product.jsx';
 
 
 class ProductList extends Component {
