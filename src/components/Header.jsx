@@ -8,12 +8,7 @@ class Header extends Component {
 
     render() {
 
-        let myStyle = {
-            fontSize: "90px",
-            height: "300px"
-        };
 
-        let hidden = {visibility: "hidden"}
         return (
 
 
@@ -22,27 +17,29 @@ class Header extends Component {
 
 
                 <div className="w3-display-middle w3-center">
-                    <div className="w3-text-white" style={myStyle}>PRODUITS<br/>{this.props.producer.toUpperCase()}</div>
+                    <div className="w3-text-white" id="header-title">PRODUITS<br/>
+                        {this.props.producer.toUpperCase()}
+                    </div>
                 </div>
 
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
-                <p style={hidden}>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
 
 
                 <div className="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">

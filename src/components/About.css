@@ -1,0 +1,27 @@
+#about {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#about p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#about img {
+    width: 100%;
+    max-width: 1000px
+}
+
+#about-content {
+    width: 60%;
+    max-width: 700px;
+}
+
+
+@media screen and (max-width: 900px) {
+    #about-content {
+        width: 90%;
+        max-width: 700px;
+    }
+}

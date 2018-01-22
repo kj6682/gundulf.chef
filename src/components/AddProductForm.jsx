@@ -90,7 +90,7 @@ class AddProductForm extends React.Component {
             maxWidth: "700px"
         }
         return (
-            <div className="w3-container" id="where" style={myStyle}>
+            <div className="w3-container" id="add-product" style={myStyle}>
                 <div className="w3-content" style={myStyle700}>
                     <h5 className="w3-center w3-padding-48">
                         <span className="w3-tag w3-wide">NOUVEAU PRODUIT</span>

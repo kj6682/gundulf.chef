@@ -39,7 +39,7 @@ class ProductArea extends Component {
                                            remove: this.props.callbacks.remove
                                        }}/>
         return (
-            <div className="w3-container" id="where" style={myStyle}>
+            <div className="w3-container" id="list-products" style={myStyle}>
                 <div className="w3-content" style={myStyle700}>
                     <h5 className="w3-center w3-padding-48">
                         <span className="w3-tag w3-wide">LISTE DE PRODUITS</span>
