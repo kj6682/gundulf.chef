@@ -78,6 +78,7 @@ class App extends Component {
 
                 <Top
                     callbacks={{selectProducer: this.selectProducer}}/>
+
                 <Header producer={this.state.producer}/>
                 <div className="w3-sand w3-grayscale w3-large">
 
