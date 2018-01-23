@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './Product.css'
+import UpdateProductForm from './UpdateProductForm'
 
 class Product extends Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class Product extends Component {
         this.remove = this.remove.bind(this);
         this.open = this.open.bind(this);
         this.close = this.close.bind(this);
+        this.update = this.update.bind(this);
     }
 
     remove() {
@@ -19,15 +21,18 @@ class Product extends Component {
     }
 
     close() {
-        console.log("close")
         document.getElementById('id' + this.props.index).style.display = 'none';
     }
-
+    update(product) {
+        this.props.callbacks.add(product);
+        console.log("update" + product)
+        document.getElementById('id' + this.props.index).style.display = 'none';
+    }
 
     render() {
         let index = this.props.index;
         let myStyle = "w3-container w3-card product-" + index % 2;
-        let modalStyle = {paddingTop: "300px"}
+
         return (
             <li className={myStyle}>
                 <div className="w3-row">
@@ -36,8 +41,7 @@ class Product extends Component {
                         <h2>{this.props.product.name} ({this.props.product.pieces})</h2>
                         {(this.props.product.endDate === "9999-12-31") ?
                             <p className="smallText">valid du: {this.props.product.startDate} </p> :
-                            <p className="smallText">valid du: {this.props.product.startDate}
-                                au: {this.props.product.endDate}</p>
+                            <p className="smallText">valid du: {this.props.product.startDate} au: {this.props.product.endDate}</p>
                         }
                         <p className="smallText"><i className="red">lun.</i> mar. mer. jeu. ven. <i
                             className="red">sam.</i> <i className="red">dim.</i></p>
@@ -57,16 +61,16 @@ class Product extends Component {
                     </div>
                 </div>
 
-                <div id={"id" + index} style={modalStyle}className="w3-modal">
+                <div id={"id" + index}  className="w3-modal">
                     <div className="w3-modal-content w3-card-4">
                         <header className="w3-container w3-light-green">
-                            <span onClick={this.close}
+                            <span id={"span_id" + index} onClick={this.close}
                                   className="w3-button w3-display-topright">&times;</span>
                             <h2>{this.props.product.name} ( {this.props.product.pieces} )</h2>
                         </header>
                         <div className="w3-container w3-text-black">
-                            <p>Some text. Some text. Some text.</p>
-                            <p>Some text. Some text. Some text.</p>
+                            <UpdateProductForm product={this.props.product}
+                                            callbacks={{update:this.update}}/>
                         </div>
                     </div>
                 </div>
