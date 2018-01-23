@@ -5,27 +5,28 @@ class Top extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            toggle: true,
+        }
         this.handleChange = this.handleChange.bind(this);
-        this.myFunction = this.myFunction.bind(this);
+        this.toggleSmallMenu = this.toggleSmallMenu.bind(this);
     }
 
     handleChange(e) {
         this.props.callbacks.selectProducer(e.target.id);
-        this.myFunction()
+        this.setState({toggle: false})
     }
 
 
-    myFunction() {
-        console.log("myFunction")
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
+    toggleSmallMenu() {
+        this.setState({toggle: !this.state.toggle})
     }
 
     render() {
+        let smallMenuClass = "w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-large";
+        if(this.state.toggle){
+            smallMenuClass = smallMenuClass + " w3-show"
+        }
 
         return (
             <div id="top-nav-bar" className="w3-top">
@@ -33,7 +34,7 @@ class Top extends Component {
 
                     <button id="burger"
                             className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-left w3-padding-large w3-large"
-                            onClick={this.myFunction} title="Toggle Navigation Menu">
+                            onClick={this.toggleSmallMenu} title="Toggle Navigation Menu">
                         <i className="fa fa-bars"></i></button>
                     <button id="four" className="w3-bar-item w3-button w3-hide-small w3-padding-large w3-center"
                             onClick={this.handleChange}>FOUR
@@ -49,7 +50,7 @@ class Top extends Component {
                     </button>
 
                 </div>
-                <div id="navDemo" className="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-large">
+                <div id="smallMenu" className={smallMenuClass}>
                     <button id="four" className="w3-bar-item w3-button w3-padding-large"
                             onClick={this.handleChange}>FOUR
                     </button>
