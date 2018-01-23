@@ -6,7 +6,7 @@ class Top extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            toggle: true,
+            toggle: false,
         }
         this.handleChange = this.handleChange.bind(this);
         this.toggleSmallMenu = this.toggleSmallMenu.bind(this);
